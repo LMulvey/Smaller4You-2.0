@@ -1,0 +1,25 @@
+<!--this page iterates over the hardcoded urls within the url Database in express_server file-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <body>
+
+    <!--this is the /urls page which shows the shortened url corresponding to its longer url and the user that is logged in-->
+    <% include partials/_header %>
+    <% if(isAuthenticated) { %>
+     <% for (var key in urls) { %>
+        <!--grabs longUrl from array-->
+        <li><%= key %> <%= urls[key]['longUrl'] %></li>
+        <form method="POST" action="/urls/<%= key %>?_method=DELETE">
+            <button type="submit" style="float:left">Delete Me</button>
+
+        </form>
+        <form method="GET" action="/urls/<%= key %>">
+            <a href="/urls/<%= key %>">Edit Me</a>
+        </form>
+        <% } %>
+    <% } %>
+    </body>
+</html>
+

@@ -1,0 +1,29 @@
+{
+  "name": "urlShortening",
+  "version": "1.0.0",
+  "description": "",
+  "main": "express_server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mulvster/smaller4You.git"
+  },
+  "keywords": [],
+  "author": "April Mulvey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mulvster/smaller4You/issues"
+  },
+  "homepage": "https://github.com/mulvster/smaller4You#readme"
+}
