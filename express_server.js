@@ -23,6 +23,8 @@ app.use(cookieSession({
   keys: ['key1', 'key2']
 }));
 app.use(userMiddleware);
+//allows use of Static assets located in ./public/ folder
+app.use(express.static('public'));
 
 //Everytime you're new on the browser new cookies are set because this is set in the middleware it will be available anywhere
 //in the application.
