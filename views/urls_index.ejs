@@ -1,25 +1,59 @@
 <!--this page iterates over the hardcoded urls within the url Database in express_server file-->
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    </head>
-    <body>
+<!--this is the /urls page which shows the shortened url corresponding to its longer url and the user that is logged in-->
 
-    <!--this is the /urls page which shows the shortened url corresponding to its longer url and the user that is logged in-->
-    <% include partials/_header %>
+<% include partials/_header %>
+
     <% if(isAuthenticated) { %>
+    <table class="table">
+        <thead>
+            <th>Shortened URL</th>
+            <th>Regular URL</th>
+            <th>Edit</th>
+            <th>Delete?</th>
+        </thead>
+        <tbody>
      <% for (var key in urls) { %>
         <!--grabs longUrl from array-->
-        <li><%= key %> <%= urls[key]['longUrl'] %></li>
-        <form method="POST" action="/urls/<%= key %>?_method=DELETE">
-            <button type="submit" style="float:left">Delete Me</button>
-
-        </form>
-        <form method="GET" action="/urls/<%= key %>">
-            <a href="/urls/<%= key %>">Edit Me</a>
-        </form>
+        <tr>
+            <td><a href="/u/<%= key %>"><%= key %></a></td> 
+            <td><%= urls[key]['longUrl'] %></td>
+            
+            <td>
+                <form method="GET" action="/urls/<%= key %>">
+                    <a class="btn btn-default" href="/urls/<%= key %>">Edit</a>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="/urls/<%= key %>?_method=DELETE">
+                    <button class="btn btn-danger" type="submit">Delete?</button>
+                </form>
+            </td>
+        </tr>
         <% } %>
+    </tbody>
+    </table>
+    
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center message">
+             <h2>Want to make a new URL?!</h2>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form action="/urls" method="POST">
+                <div class="form-group">
+                    <label for="longURL">Enter a URL</label>
+                    <input id="longURL" type="text" name="longURL" class="form-control" placeholder="http://">
+                </div>
+                 <div class="form-group">
+                    <button class="btn btn-success btn-block" type="submit">Submit URL!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <% } else { %>
+        <% include partials/_notauth %>
     <% } %>
-    </body>
-</html>
 
+<% include partials/_footer %>

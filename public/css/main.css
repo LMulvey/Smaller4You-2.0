@@ -32,6 +32,10 @@ a {
   padding: 0;
 }
 
-.sadface {
-  margin-top: 25%;
+.header {
+  margin-bottom: 10%;
+}
+
+.message {
+  margin-bottom: 50px;
 }

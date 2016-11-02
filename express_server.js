@@ -114,7 +114,7 @@ app.delete('/urls/:id', (req, res) => {
 });
 
 //renders urls/new page
-app.get("/urls/new", (req, res) => {
+app.get("/new", (req, res) => {
   res.render("urls_new", {username: req.cookies["username"]});
 });
 
@@ -162,7 +162,7 @@ app.post("/register", (req, res) => {
   } else {
     users[id] = {id, email, hashed_password};
     req.session.user_id = id;
-    res.redirect('/urls/new');
+    res.redirect('/new');
   }
 });
 

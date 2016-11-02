@@ -1,11 +1,5 @@
-<!-- this page will display the shortened url -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-</head>
-<body>
 <% include partials/_header %>
+
 <h3>ShortUrl to edit &#10547; <%= shortURL %></h3>
 
 <form action="/urls/<%= shortURL %>?_method=PUT" method="POST" style="margin:150px;">
@@ -14,6 +8,4 @@
     <input type="submit" value="Submit">
 </form>
 
-</body>
-</html>
-
+<% include partials/_footer %>

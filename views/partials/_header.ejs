@@ -35,7 +35,7 @@
 <body>
 
     <div class="container">
-        <div class="row">
+        <div class="row header">
             <div class="col-md-1">
                 <img src="./img/shrink.png" alt="Smaller4You">
             </div>
@@ -49,7 +49,7 @@
                 
                     <form action="/logout" method="POST">
                         <h3>Welcome!</h3><%= user.email %>
-                        <button type="submit">Logout</button>
+                        <button class="btn btn-danger" type="submit">Logout</button>
                     </form>
                     
                 <% } else { %>
@@ -60,13 +60,5 @@
                 <% } %>
             </div>
         </div>
-        <% if(!isAuthenticated) { %>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 text-center sadface">
-                    <img src="./img/sad.png">
-                    <h3>Want to see your URLs?</h3>
-                    <p>Login above!</p>
-                </div>
-            </div>
-        <% } %>
-    </div>
+
+
