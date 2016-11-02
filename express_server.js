@@ -1,5 +1,7 @@
 // require('dotenv').config();
 
+"use strict"
+
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8080; // default port 8080
@@ -177,7 +179,8 @@ app.get("/login", (req, res) => {
 
 //posts login information grabs email and password from the request body.
 app.post("/login", (req, res) => {
-  const {email, password} = req.body;
+  const email = req.body.email;
+  const password = req.body.password;
 
   // check that it matches the database
   // const user = users.find(user => user.email === email && user.password === password)

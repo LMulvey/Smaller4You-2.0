@@ -9,12 +9,16 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  color: #351330;
+}
+
+a {
+  color: #424254;
 }
 
 .container {
-  background: #f1f1f1; 
+  background-color: rgba(255, 255, 255, 0.6); 
   padding: 25px;
-  text-align: center;
   font-size: 1.4em;
   height: 100%;
   -webkit-box-shadow: 0px 0px 10px 1px rgba(0,0,0,0.75);
@@ -23,7 +27,11 @@ body {
 }
 
 .logo {
-  font-size: 1.1em;
+  font-size: 1.8em;
   margin: 0;
   padding: 0;
+}
+
+.sadface {
+  margin-top: 25%;
 }
